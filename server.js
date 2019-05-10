@@ -23,6 +23,11 @@ app.use((req,res,next) => {
     next();
 });
 
+app.post('/paint', (req, res) => {
+    pusher.trigger('painting', 'draw', req.body);
+    res.json(req,body);
+})
+
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
