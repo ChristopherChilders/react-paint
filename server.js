@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Pusher = require('pusher');
 
+
 const app = express();
 const port = process.env.PORT || 4000;
 const pusher = new Pusher({
@@ -24,9 +25,10 @@ app.use((req,res,next) => {
 });
 
 app.post('/paint', (req, res) => {
+    console.log(req.body);
     pusher.trigger('painting', 'draw', req.body);
-    res.json(req,body);
-})
+    res.json(req.body);
+  });
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Canvas from './components/Canvas';
 
-class App extends Component {
+class App extends React.Component {
 
   render() {
     return (
@@ -13,8 +13,9 @@ class App extends Component {
           <div className="color-guide">
             <h5>Color Guide</h5>
             <div className="user user">User</div>
-            <div className="user guest">Guest</div>
+            {/* <div className="user guest">Guest</div> */}
           </div>
+          <Canvas />
         </div>
       </Fragment>
     );
